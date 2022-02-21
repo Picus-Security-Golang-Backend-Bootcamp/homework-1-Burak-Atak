@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+// Text dosyasindan satirlari okuyup slice a ekelr ve bunu doner
 func create_book_list() []string {
 	var book_list []string
 	file, _ := os.Open("books.txt")
@@ -21,6 +22,7 @@ func create_book_list() []string {
 	return book_list
 }
 
+// Input alir ve son yazilan kelimenin sonundaki \n silip slice şeklinde inputu doner
 func take_input() []string {
 	reader := bufio.NewReader(os.Stdin)
 	name, _ := reader.ReadString('\n')
@@ -30,6 +32,7 @@ func take_input() []string {
 	return name_list
 }
 
+// Kitap slice'ini listelemek ve içinde arama yapmak için kullanilir
 func main() {
 	book_list := create_book_list()
 
